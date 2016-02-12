@@ -11,7 +11,7 @@ namespace KarakterKalkis
 {
     public sealed class FagViewModel : INotifyPropertyChanged
     {
-        private LovligKarakter _gjennomsnitt;
+        private float _gjennomsnitt;
         public ObservableCollection<Fag> FagListe { get; }
 
         public PropertyChangedEventHandler UpdateHandler { get; }
@@ -22,7 +22,7 @@ namespace KarakterKalkis
             FagListe = new ObservableCollection<Fag>();
         }
 
-        public LovligKarakter Gjennomsnitt
+        public float Gjennomsnitt
         {
             get { return _gjennomsnitt; }
             private set
@@ -36,7 +36,7 @@ namespace KarakterKalkis
 
         public void UpdateTotal()
         {
-            Gjennomsnitt = (LovligKarakter)FagListe.Select(x => (int) x.BokstavKarakter).Average();
+            Gjennomsnitt = (float)FagListe.Select(x => (int) x.BokstavKarakter).Average(); //usikker på om denne gjør det den skal
         }
 
         private void OnPropertyChanged([CallerMemberName] string propertyName = null)
