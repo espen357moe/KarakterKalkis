@@ -36,7 +36,7 @@ namespace KarakterKalkis
 
         public void UpdateTotal()
         {
-            Gjennomsnitt = (float)FagListe.Select(x => (int) x.BokstavKarakter).Average(); //usikker på om denne gjør det den skal
+            Gjennomsnitt = (float)FagListe.Select(x => (float) x.BokstavKarakter).Average(); //usikker på om denne gjør det den skal
         }
 
         private void OnPropertyChanged([CallerMemberName] string propertyName = null)
